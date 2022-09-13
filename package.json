@@ -1,0 +1,14 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "my social media aap",
+  "main": "index.js", 
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bhagya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
