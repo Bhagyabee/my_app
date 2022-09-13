@@ -8,6 +8,9 @@
 
 app.use('/',require('./routes'));
 
+//set up view engine
+app.set('view engine','ejs');
+app.set('views','./views');
 
  // telling the server to listen on port
  app.listen(port,(err)=>{

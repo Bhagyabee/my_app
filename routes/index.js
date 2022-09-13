@@ -1,12 +1,12 @@
 const express=require('express');
 const router=express.Router();
 
-// using home controller here 
+// using  controllers here 
 const homeController=require('../controllers/home_controller ')
 
 
 router.get('/',homeController.home);
+router.use('/users',require('./users'));
 
-console.log('router is set');
 
 module.exports=router;
