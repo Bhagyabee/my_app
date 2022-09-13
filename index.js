@@ -6,7 +6,7 @@
 
 
 
-
+app.use('/',require('./routes'));
 
 
  // telling the server to listen on port
