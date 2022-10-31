@@ -1,0 +1,31 @@
+header{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+   
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            list-style: none;
+            margin-left: 20px;
+            a{
+                text-decoration: none;
+                padding: 6px 15px;
+                color: #ffff;
+                border-radius: 20px;
+            }
+            a:hover,a.active{
+                background:#ffff;
+                color: #2b1055;
+            }
+        }
+    }
+}

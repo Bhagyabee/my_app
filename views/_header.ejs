@@ -1,0 +1,26 @@
+<header id=" layout-header">
+    <h1></h1> 
+    <nav>
+    <ul >
+
+        <% if (locals.user) { %>
+
+            <li><%= user.name %> </li>
+            <li>
+                <a href="/users/sign-out"> Sign out</a>
+            </li>
+
+        <% } else { %>
+         
+                  <li>  
+                    <a href="/users/sign-in" class="active" id="auth-links">Sign in</a>
+                  </li>
+                  <li>
+                    <a href="/users/sign-up" class="active">Sign up</a>
+                
+                  </li>
+          
+            <% } %>
+    </ul>
+  </nav>
+</header>

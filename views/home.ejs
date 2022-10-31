@@ -1,14 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= title %> </title>
-</head>
-<body>
-     
-<h1>    Codeil  / <%= title %> </h1>
-    
-</body>
-</html>
+<link rel="stylesheet" href="/css/home.css?version=#" />
+
+<div id="home-container">
+ 
+  <section id="feed-post">
+    <h4>Post</h4>
+   
+    <form action="/posts/create" id="new-post-form" method="POST">
+      <textarea
+        name="content"
+        cols="30"
+        rows="3"
+        placeholder="type here...."
+        required
+      ></textarea>
+      <input type="submit" value="Post" />
+    </form>
+   
+    <div id="post-list-container">
+      <ul>
+        <% for( post of posts ){ %> 
+          
+          <%- include('_post') -%> 
+          
+        <% } %>
+      </ul>
+    </div>
+  </section>
+  <section id="User-friends">
+    <h4>Friends</h4>
+    <% for( u of all_users) { %>
+    <p>
+      <a href="/users/profile/<% u.id %>"> <%= u.name %> </a>
+    </p>
+    <% } %>
+  </section>
+</div>
+<script src="/js/home_post.js"></script>

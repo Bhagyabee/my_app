@@ -1,0 +1,29 @@
+[33mcommit dee9b82de11e130eb7066b2ff882f17a1558cabc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mmanual-local-auth[m[33m)[m
+Author: Bhagyabee <bhagyabeeb@email.com>
+Date:   Sat Sep 17 12:38:21 2022 +0530
+
+    created user signin and signup
+
+[33mcommit a7d740b6ca51dccfe9be224e10265ff37afcdb75[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Bhagyabee <bhagyabeeb@email.com>
+Date:   Thu Sep 15 23:10:26 2022 +0530
+
+     create a user-signin and signup page
+
+[33mcommit ff7d22ff0bff633325c4a4d7e5799af4e43c8a7e[m
+Author: Bhagyabee <bhagyabeeb@email.com>
+Date:   Tue Sep 13 23:11:30 2022 +0530
+
+    third commit: setting up  user controller and views
+
+[33mcommit 23516ebdb41e121d40177ec9a8a3402c845a94b3[m
+Author: Bhagyabee <bhagyabeeb@email.com>
+Date:   Tue Sep 13 22:15:15 2022 +0530
+
+    second commit:created router and controller
+
+[33mcommit ebd89b0c7ba09e50be88678ec9204f76af758392[m
+Author: Bhagyabee <bhagyabeeb@email.com>
+Date:   Tue Sep 13 16:18:38 2022 +0530
+
+    first commit
