@@ -3,12 +3,13 @@
  const bodyParser     =   require('body-parser');
  const app            =   express();
  const port           =   8000;
- const expresslayouts =require('express-ejs-layouts');
+ const expresslayouts =   require('express-ejs-layouts');
 const db              =   require('./config/mongoose');
  
 const session         =   require('express-session');
 const passport        =   require('passport');
 const passportLocal   =   require('./config/passport-local-strategy');
+const passportjwt     =   require('./config/passport-jwt-strategy')
 const { default: mongoose } = require('mongoose');
 const MongoStore      =   require('connect-mongo')(session);
 const sassMiddleware  =   require('node-sass-middleware');
@@ -34,7 +35,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
+app.use(express.static('assets'));
+//make the upload path available to the browser
+app.use('/uploads',express.static(__dirname+ '/uploads'));
 app.use(expresslayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
@@ -70,7 +73,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
 app.use(customMware.setFlash);
-app.use(express.static('assets'));
+
 app.use('/',require('./routes')); 
 
  // telling the server to listen on port

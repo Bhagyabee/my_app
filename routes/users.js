@@ -7,10 +7,11 @@ const User = require('../models/users');
 
 
 
-router.get('/profile/:id',passport.checkAuthentication,userController.profile); 
+router.get('/profile',passport.checkAuthentication,userController.profile); 
+router.post('/updates/:id',passport.checkAuthentication,userController.update)
 router.get('/sign-up',userController.sign_up);
 router.get('/sign-in',userController.sign_in);
-router.post('/create', userController.create); 
+router.post('/create', userController.create.bind(userController)); 
  
 
 //use passport as middleware to authenticate
