@@ -6,7 +6,7 @@
     {
         let newPostForm  = $('#new-post-form');
 
-        newPostForm.on('submit',(function(event)
+        newPostForm.submit(function(event)
         {
             event.preventDefault();
             

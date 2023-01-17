@@ -19,28 +19,13 @@ const sassMiddleware  =   require('node-sass-middleware');
 const flash           =   require('connect-flash');
 const customMware     =   require('./config/middleware');
 const fs = require('fs')
-// const chatServer = require('http').createServer(app);
-// const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-// // const cors = require('cors');
+const multer = require('multer');
 
 
-
-// const io = require("socket.io")(chatServer, {
-//      cors: {
-//        origin:"http://localhost:8000",
-//        methods: ["GET", "POST","OPTIONS"],
-//  transports: ['websockets','polling'],
-//        withCredentials: true
-//      },
-//      allowEIO3: true
-//    });
-// chatServer.listen(5000);
-// console.log('chat server is listening on port 5000');
-
-// const http = require('http');
-// const server = http.createServer(app);
-// const {Server}= require('socket.io');
-// const io = new Server(server);
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000')
 
 app.use(sassMiddleware({
     src:path.join(__dirname,env.asset_path,'scss'),
