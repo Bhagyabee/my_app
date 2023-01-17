@@ -1,17 +1,28 @@
-#home-container{
+#home-container
+{    a{
+      
+   text-decoration: none;
+      }
+      font-size: 1.18rem;
     display: flex;
-    height: 90%;
-   
-    #feed-post{
-         width: 70%;
-         padding: 10px;
-         height: 100%;
-    }
-
-    #User-friends{
-        width: 30%;
+    #user-nav
+    {   img{
+        border-radius: 5%;
+         }
+        
+        width: 20%;
         padding: 10px;
-        border-left: 1px solid lightgray;
-        height: 100%;
+        border-right: 1px solid lightgrey;
+    }
+    #feed-posts
+    {  
+        width: 60%;
+        padding: 15px;
+    }
+    #user-friends
+    {   
+        width: 20%;
+        padding: 10px;
+        border-left: 1px solid lightgrey;
     }
 }

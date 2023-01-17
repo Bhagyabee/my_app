@@ -1,12 +1,18 @@
 #home-container {
-  display: flex;
-  height: 90%; }
-  #home-container #feed-post {
-    width: 70%;
+  font-size: 1.18rem;
+  display: flex; }
+  #home-container a {
+    text-decoration: none; }
+  #home-container #user-nav {
+    width: 20%;
     padding: 10px;
-    height: 100%; }
-  #home-container #User-friends {
-    width: 30%;
+    border-right: 1px solid lightgrey; }
+    #home-container #user-nav img {
+      border-radius: 5%; }
+  #home-container #feed-posts {
+    width: 60%;
+    padding: 15px; }
+  #home-container #user-friends {
+    width: 20%;
     padding: 10px;
-    border-left: 1px solid lightgray;
-    height: 100%; }
+    border-left: 1px solid lightgrey; }

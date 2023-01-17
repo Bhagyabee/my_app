@@ -1,3 +1,61 @@
 body{
-    background-color: blue;
+    background-color: whitesmoke;
+    margin: auto;
+    .profile-section{
+        display:flex;
+        flex-direction:column;
+        img{
+            
+            margin:auto;
+            margin-top: 9px;
+            border-radius: 10%;
+        }
+    form{
+        display:inline-block;
+       
+        height: 20rem;
+        width: 18rem;
+        // margin-left: 24rem;
+        border-radius:3%;
+        margin:auto;
+        input{
+            margin-left: 1.3rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            // border-radius:3%;
+            width: 15rem;
+            padding: 0.8rem;
+            font-size: 0.7rem;
+            // outline: blueviolet;
+            font-family: sans-serif;
+            outline-color:black;
+        
+
+        }
+        input[type="submit"]{
+            
+            // background-color: #d72be3;
+            background-color: #4834c9;
+            color:white;
+            font-size:1rem;
+            outline: none;
+            cursor: pointer;
+            border:none;
+            border-radius:3%;
+            
+        }
+        input[type="file"]{
+            
+            // background-color: #d72be3;
+            background-color: #322f38;
+            color:white;
+            font-size:1rem;
+            outline: none;
+            cursor: pointer;
+            border:none;
+            border-radius:3%;
+            
+        }
+    }
+}
 }

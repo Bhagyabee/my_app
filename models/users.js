@@ -22,7 +22,13 @@ const UserSchema =new mongoose.Schema({
     },
     avatar:{
         type: String
-    }
+    },
+    friendships: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship'
+        }
+    ]
 },{
     timestamps: true
 });
@@ -35,7 +41,8 @@ let storage = multer.diskStorage({
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
       cb(null, file.fieldname + '-' + uniqueSuffix)
     }
-  })
+  });
+  
 
 //static
 UserSchema.statics.uploadedAvatar = multer({ storage: storage}).single('avatar')

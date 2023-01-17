@@ -1,11 +1,21 @@
-<h1> Sign in</h1>
-<h1> USER SIGN IN </h1>;
-<h2> Codeil </h2>
+
+<link rel="stylesheet" href="/css/user_sign_in.css">
+
+<div id="sign-in-page">
 
 <form action="/users/create-session " method="POST">
+    <h2 id="heading">Sign in</h2>
+    <p id="google-sign-in">
+        <a href="/users/auth/google"><img src="/images/unnamed.png" height="30" width="30"><span> Continue with Google</span></a>
+    </p>
    
     <input type="email" name="email" placeholder="Your email" required>
     <input type="password" name="password" placeholder="Password" required>
   
     <input type="submit" value="Sign in"> 
+    <p id="already-account">
+        <span>Don't have an account ?</span> 
+        <a href="/users/sign-up">Sign Up</a>
+        <p>
 </form>
+</div>

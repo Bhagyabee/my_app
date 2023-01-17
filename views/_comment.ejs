@@ -1,7 +1,11 @@
-<li>
+<script
+      src="https://kit.fontawesome.com/465387593d.js"
+      crossorigin="anonymous"
+    ></script>
+<li id="comment-<%= comment._id %>">
     <p> 
       <small>
-          <a href="/comments/destroy/<%= comment.id %>"> XX </a>
+          <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>"> <span><i class="fa-solid fa-trash"></i></span> </a>
       </small>
          <%= comment.content %>
          <br>
@@ -9,5 +13,14 @@
             <%= comment.user.name %>
             <% } %>
          </small>
+         <small>
+            <% if(locals.user) { %>
+                <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                    <%= comment.likes.length %> Likes
+                </a>
+            <% } else { %>
+                <%= comment.likes.length %> Likes
+            <% } %>
+        </small>
       </p>
   </li>

@@ -1,31 +1,44 @@
-header{
-    position:absolute;
-    top:0;
-    left: 0;
+#header{
+    background-image: linear-gradient(to bottom,#00BC7e,#108775);
+    height: 7vh;
     width: 100%;
-    height: 8%;
    
-    padding: 30px 100px;
+    
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    ul{  
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        li{
-            list-style: none;
-            margin-left: 20px;
-            a{
-                text-decoration: none;
-                padding: 6px 15px;
-                color: #ffff;
-                border-radius: 20px;
-            }
-            a:hover,a.active{
-                background:#ffff;
-                color: #2b1055;
-            }
-        }
+    a{
+        text-decoration:none;
+        font-size: 17px;
+        font-weight: 540;
+        margin-left: 2vh;
+        color: white;
+        font-family: sans-serif;
     }
+    a:hover{
+        color:lightgray;
+        transition-delay: 0.2s;
+        text-decoration: underline;
+    }
+    
+    #app-name{
+        margin-top: 1.5vh;
+        font-size: 17px;
+        font-weight: 540;
+
+    }
+    div span{
+        color: white;
+        font-family: sans-serif;
+        // margin-top: 3vh;
+
+    }
+    #sign-links{
+        margin-top: 1.5vh;
+        // margin-left: 2vh;
+    }
+}
+#head-div{
+    position: relative;
+    width: 100%;
+    
 }

@@ -1,5 +1,7 @@
 body {
   margin: 0;
-  background: linear-gradient(#c9b4ea, #7597de); }
+  background: white;
+  background-color: #99b0da;
+  background-image: linear-gradient(to bottom right, #9cc0e0 10%, #6e9bf6); }
   body #layout-main {
-    height: 100%; }
+    height: auto; }

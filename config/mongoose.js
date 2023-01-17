@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
-
-mongoose.connect('mongodb://localhost/new_app_development');
+const env = require('./environment')
+mongoose.connect('mongodb://localhost/new_app_development',{ useNewUrlParser: true });
 
 //acquire connection to check if success or error 
 const db=mongoose.connection;
@@ -12,3 +12,5 @@ db.on('error',console.error.bind(console,'error connecting to db'));
 db.once('open',function(){
     console.log('successfully connected to db');
 }); 
+
+module.exports = db;

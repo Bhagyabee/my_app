@@ -1,25 +1,30 @@
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
+#header {
+  background-image: linear-gradient(to bottom, #00BC7e, #108775);
+  height: 7vh;
   width: 100%;
-  height: 8%;
-  padding: 30px 100px;
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  header ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    header ul li {
-      list-style: none;
-      margin-left: 20px; }
-      header ul li a {
-        text-decoration: none;
-        padding: 6px 15px;
-        color: #ffff;
-        border-radius: 20px; }
-      header ul li a:hover, header ul li a.active {
-        background: #ffff;
-        color: #2b1055; }
+  justify-content: space-between; }
+  #header a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 540;
+    margin-left: 2vh;
+    color: white;
+    font-family: sans-serif; }
+  #header a:hover {
+    color: lightgray;
+    transition-delay: 0.2s;
+    text-decoration: underline; }
+  #header #app-name {
+    margin-top: 1.5vh;
+    font-size: 17px;
+    font-weight: 540; }
+  #header div span {
+    color: white;
+    font-family: sans-serif; }
+  #header #sign-links {
+    margin-top: 1.5vh; }
+
+#head-div {
+  position: relative;
+  width: 100%; }

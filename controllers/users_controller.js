@@ -1,14 +1,51 @@
 const User = require("../models/users");
 const fs= require('fs');
 const path = require('path');
+const Friendships = require('../models/friendship')
 
-module.exports.profile = function (req, res) {
-  User.findById(req.params.id, function (err, user) {
-    return res.render("user_profile", {
-      title: "User Profile",
-      profile_user: user,
+module.exports.profile = function(req,res){
+  User.findById(req.params.id, function(err,user){
+    
+    return res.render('user_profile',{
+      title:'User Profile' ,
+      profile_user:user
     });
   });
+}
+
+
+
+
+
+// profile made as Profile
+module.exports.Profile = async function (request, response) {
+  try {
+   
+    let user = await User.findOne({ _id: request.query.id });
+
+    let friendship1,friendship2
+
+    friendship1 = await Friendships.findOne({
+      from_user: request.user,
+      to_user: request.params.id, 
+    });
+
+    friendship2 = await Friendships.findOne({
+      from_user: request.params.id,
+      to_user: request.user,
+    });
+
+    
+    let populated_user = await User.findById(request.user).populate('friendships');
+    return response.render("user_profile", {
+      title: "Codemon | Profile",
+      profile_user: user,
+      populated_user
+    });
+  } catch (error) {
+    console.log("Error", error);
+    return;
+  }
 };
 
 module.exports.update = async function (req, res) {
@@ -41,7 +78,7 @@ module.exports.update = async function (req, res) {
     }
   } else {
     req.flash("error", "Unauthorized");
-    return res.status(401).send("Unauthorized");
+    return res.status((401).send("Unauthorized"));
   }
 };
 
@@ -93,7 +130,7 @@ module.exports.create = function (req, res) {
 };
 module.exports.createSession = function (req, res) {
   req.flash("success", "Logged in successfully");
-  return res.redirect("/");
+  return res.redirect('/');
 };
 
 module.exports.destroySession = function (req, res) {
@@ -103,5 +140,5 @@ module.exports.destroySession = function (req, res) {
     }
   });
   req.flash("success", "You have successfully logged out");
-  return res.redirect("back");
+  return res.redirect("/users/sign-in");
 };

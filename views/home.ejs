@@ -1,8 +1,18 @@
 <link rel="stylesheet" href="/css/home.css?version=#" />
 
 <div id="home-container">
- 
-  <section id="feed-post">
+  <section id="user-nav">
+    <h4>User</h4>
+    <% if(locals.user) { %>
+        <% if(user.avatar) { %>
+            <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
+        <% } %>
+        <p>
+            <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
+        </p>
+    <% } %>
+</section>
+  <section id="feed-posts">
     <h4>Post</h4>
     <% if (locals.user){ %>
     <form action="/posts/create" id="new-post-form" method="POST">
@@ -26,13 +36,81 @@
       </ul>
     </div>
   </section>
-  <section id="User-friends">
+  <section id="user-friends">
     <h4>Friends</h4>
     <% for( u of all_users) { %>
     <p>
-      <a href="/users/profile/<% u.id %>"> <%= u.name %> </a>
+      <a href="/users/profile/<%=u.id %>"> <%= u.name %> </a>
     </p>
     <% } %>
+
+   
+
+    <% if(locals.user) { %>
+      <div class="friends-list">
+        <div class="header">Friends</div>
+        <% if(locals.user.friendships.length == 0) {%>
+        <div class="no-friends">No friends found!</div>
+        <% }else{ %> <% for(friends of locals.user.friendships){ %> <%
+        if(friends.from_user.id == locals.user.id) {%>
+        <div>
+          <a class="friends-item" href="/users/profile?id=<%=friends.to_user._id%>">
+            <div class="friends-img">
+              <% if(friends.to_user.avtar == undefined){ %>
+                <img
+                class="rounded-circle" id="user-dp"
+               
+                alt="logo"
+              />
+                <% }else{%>
+                  <img
+                  class="rounded-circle" id="user-dp"
+                  src="<%= locals.user.avtar %>"
+                  alt="logo"
+                />
+                <% } %>
+            </div>
+            <div class="friends-name"><%= friends.to_user.name %></div>
+          </a>
+        </div>
+        <%}%> <% if(friendships.to_user.id == locals.user.id) {%>
+        <div>
+          <a class="friends-item" href="/users/profile?id=<%=friends.from_user._id%>">
+            <div class="friends-img">
+              <% if(friendships.from_user.avtar == undefined){ %>
+                <img
+                class="rounded-circle" id="user-dp"
+              
+                alt="logo"
+              />
+                <% }else{%>
+                  <img
+                  class="rounded-circle" id="user-dp"
+                  src="<%= locals.user.avtar %>"
+                  alt="logo"
+                />
+                <% } %>
+            </div>
+            <div class="friends-name"><%= friendships.from_user.name %></div>
+          </a>
+        </div>
+        <% } %> <% } %> <% } %>
+      </div>
+      <% } %>
+
+
+
+
   </section>
 </div>
+<script src="/js/home_comment.js"></script>
 <script src="/js/home_post.js"></script>
+<script src="/js/toggle_likes.js"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
+
+ 
